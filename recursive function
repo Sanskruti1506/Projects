@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+
+// Recursive function to calculate compound interest
+double compoundInterest(double principal, double rate, int time) {
+    if (time == 0) {
+        return principal;
+    }
+    // Compound Interest formula: A = P * (1 + r/n)^(nt)
+    // For simplicity, assuming n=1 (annual compounding)
+    return compoundInterest(principal, rate, time - 1) * (1 + rate);
+}
+
+int main() {
+    double principal, rate;
+    int time;
+
+    // Input values
+    printf("Enter principal amount: ");
+    scanf("%lf", &principal);
+    printf("Enter annual interest rate (in decimal form, e.g., 0.05 for 5%%): ");
+    scanf("%lf", &rate);
+    printf("Enter time (in years): ");
+    scanf("%d", &time);
+
+    // Calculate the compound interest
+    double amount = compoundInterest(principal, rate, time);
+    double compoundInterestAmount = amount - principal;
+
+    // Output the results
+    printf("Compound interest after %d years is: %.2lf\n", time, compoundInterestAmount);
+    printf("Total amount after %d years is: %.2lf\n", time, amount);
+
+    return 0;
+}
