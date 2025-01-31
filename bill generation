@@ -1,0 +1,42 @@
+#include <stdio.h> 
+ 
+int main() { 
+    char name[100];         // Array to store the name 
+    char mobileNumber[15]; // Array to store the mobile number 
+    float quantity;        // Variable to store the quantity of petrol 
+    float pricePerLitre;  // Variable to store the price per litre 
+    float totalBill;      // Variable to store the total bill amount 
+ 
+    // Input for name 
+    printf("Enter your name: "); 
+    fgets(name, sizeof(name), stdin); 
+ 
+    // Input for mobile number 
+    printf("Enter your mobile number: "); 
+    fgets(mobileNumber, sizeof(mobileNumber), stdin); 
+ 
+    // Input for quantity of petrol 
+    printf("Enter the quantity of petrol (in litres): "); 
+    scanf("%f", &quantity); 
+ 
+    // Input for price per litre 
+    printf("Enter the price per litre of petrol: "); 
+    scanf("%f", &pricePerLitre); 
+ 
+    // Calculate total bill 
+    totalBill = quantity * pricePerLitre; 
+ 
+    // Display the bill 
+    printf("\n=====================\n"); 
+    printf("     PETROL BILL     \n"); 
+    printf("=====================\n"); 
+    printf("Name: %s", name); 
+    printf("Mobile Number: %s", mobileNumber); 
+    printf("---------------------\n"); 
+    printf("Quantity: %.2f litres\n", quantity); 
+    printf("Price per litre: %.2f\n", pricePerLitre); 
+    printf("Total Bill: %.2f\n", totalBill); 
+    printf("=====================\n"); 
+ 
+    return 0; 
+}
